@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Friends for Sale</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div id="landing-page">
+    <h1>Welcome to Friends for Sale</h1>
+    <div id="initial-setup">
+      <h2>Choose Your Avatar and Nickname</h2>
+      <input type="text" id="nickname" placeholder="Enter your nickname" required>
+      <div>
+        <button onclick="selectAvatar('https://randomuser.me/api/portraits/men/1.jpg')">Avatar 1</button>
+        <button onclick="selectAvatar('https://randomuser.me/api/portraits/women/1.jpg')">Avatar 2</button>
+        <button onclick="selectAvatar('https://randomuser.me/api/portraits/men/2.jpg')">Avatar 3</button>
+        <button onclick="selectAvatar('https://randomuser.me/api/portraits/women/2.jpg')">Avatar 4</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="main-menu" style="display: none;">
+    <h1>Main Menu</h1>
+    <div id="profile">
+      <img id="profile-avatar" src="" alt="Avatar">
+      <h2 id="profile-nickname"></h2>
+      <p id="profile-coins">Coins: <img src="coin.png" alt="Coins" class="coin-icon"> <span id="coin-count">100</span></p>
+      <p id="profile-avatars">Bought Avatars: <span id="bought-avatars">0</span></p>
+    </div>
+    <button onclick="showMarketplace()">Go to Marketplace</button>
+  </div>
+
+  <div id="marketplace" style="display: none;">
+    <h1>Marketplace</h1>
+    <button onclick="showMainMenu()">Back to Main Menu</button>
+    <div id="avatars"></div>
+    <div id="user-avatars">
+      <h2>Your Avatars</h2>
+      <div id="my-avatars"></div>
+    </div>
+  </div>
+</body>
+</html>
